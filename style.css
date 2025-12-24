@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* HEADER */
+.header {
+    background-color: #0f172a;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* SECTIONS */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.bg-light {
+    background-color: #f8fafc;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+}
+
+.skills li {
+    background-color: #e2e8f0;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* PROJECTS */
+.project {
+    margin-bottom: 30px;
+}
+
+.project h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.project p {
+    margin-bottom: 8px;
+}
+
+.project a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f172a;
+    color: white;
+    font-size: 0.9rem;
+}
