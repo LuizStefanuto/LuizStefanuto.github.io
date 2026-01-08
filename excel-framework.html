@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel EDA Framework | Luiz Stefanuto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="project-style.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- SIDEBAR TOC -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>Excel EDA Framework</h3>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">×</button>
+            </div>
+            <nav class="toc">
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#install">Installation</a></li>
+                    <li><a href="#usage">Usage</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#github">GitHub</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+            <header class="project-header">
+                <h1>Excel EDA Framework</h1>
+                <p>Python + xlwings automation for Exploratory Data Analysis directly in Excel</p>
+                <a href="https://github.com/LuizStefanuto/excel-eda-framework" class="btn primary" target="_blank">View Code</a>
+            </header>
+
+            <article>
+                <!-- OVERVIEW -->
+                <section id="overview" class="section">
+                    <h2>Overview</h2>
+                    <p>This framework automates univariate EDA for both qualitative and quantitative variables, generating formatted tables and VBA-triggered charts directly in Excel.</p>
+                    <img src="demo-screenshot.png" alt="Framework Demo" class="demo-image">
+                </section>
+
+                <!-- FEATURES -->
+                <section id="features" class="section">
+                    <h2>Key Features</h2>
+                    <div class="features-grid">
+                        <div class="feature">
+                            <h3>Auto Table Generation</h3>
+                            <p>Frequency distributions, percentages, and summary statistics.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>VBA Integration</h3>
+                            <p>Dynamic charts created via `Draw_Analysis_Charts` macro.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Excel Native</h3>
+                            <p>Results stay in Excel ListObjects, fully editable.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DEMO -->
+                <section id="demo" class="section">
+                    <h2>Demo</h2>
+                    <video controls width="100%" style="max-width: 800px;">
+                        <source src="framework-demo.mp4" type="video/mp4">
+                    </video>
+                </section>
+
+                <!-- INSTALLATION -->
+                <section id="install" class="section">
+                    <h2>Installation</h2>
+                    <ol class="numbered-list">
+                        <li><code>git clone https://github.com/LuizStefanuto/excel-eda-framework</code></li>
+                        <li><code>pip install -r requirements.txt</code></li>
+                        <li>Open <code>analysis.xlsm</code></li>
+                        <li>Run <code>main_analysis.py</code></li>
+                    </ol>
+                </section>
+
+                <!-- USAGE -->
+                <section id="usage" class="section">
+                    <h2>Usage</h2>
+                    <div class="code-block">
+                        <pre><code>quali_tables = fx.create_count_tables(data_df, quali_vars)
+fx.write_table_grid_xlwings(quali_tables, "Análise_Exploratória_Quali")
+my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
+                    </div>
+                </section>
+
+                <!-- ARCHITECTURE -->
+                <section id="architecture" class="section">
+                    <h2>Architecture</h2>
+                    <img src="architecture-diagram.png" alt="Architecture Diagram">
+                </section>
+
+                <!-- GITHUB -->
+                <section id="github" class="section">
+                    <h2>GitHub Repository</h2>
+                    <a href="https://github.com/LuizStefanuto/excel-eda-framework" class="btn primary" target="_blank">
+                        Full Repository →
+                    </a>
+                </section>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
