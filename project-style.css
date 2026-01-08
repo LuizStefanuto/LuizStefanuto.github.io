@@ -29,7 +29,8 @@ html { scroll-behavior: smooth; }
 }
 
 .sidebar-header {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    position: relative;
     border-bottom: 1px solid var(--border);
 }
 
@@ -46,7 +47,14 @@ html { scroll-behavior: smooth; }
     cursor: pointer;
     color: var(--slate); 
     padding: 0.25rem;
-    float: right;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .toc { padding: 1rem 1.5rem; }
@@ -192,10 +200,6 @@ html { scroll-behavior: smooth; }
         transform: translateX(-100%); 
         position: fixed;
         width: 280px;
-    }
-    
-    .sidebar.collapsed {
-        transform: translateX(-100%);
     }
 }
 
