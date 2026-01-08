@@ -3,54 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luiz Stefanuto | Portfolio</title>
+    <title>Luiz Stefanuto | Data Analyst</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <h1>Luiz Stefanuto</h1>
-        <p>Data Analyst | Economist </p>
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <span class="badge">Data Analyst & Economist</span>
+            <h1>Luiz Stefanuto</h1>
+            <p>Transforming complex datasets into <span>strategic business value</span>.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="mailto:luizstefanuto@outlook.com" class="btn secondary">Contact Me</a>
+            </div>
+        </div>
     </header>
 
-    <!-- ABOUT -->
-    <section class="section">
-        <h2>About Me</h2>
-        <p>
-            I build data-driven solutions that transform raw data into clear insights
-            and business value. Experience with analytics, dashboards, automation,
-            and statistics.
-        </p>
-    </section>
+    <main class="container">
+        <!-- ABOUT -->
+        <section class="section" id="about">
+            <div class="grid-2">
+                <div>
+                    <h2>Turning Data into Narrative</h2>
+                    <p>I build data-driven solutions with a focus on analytics, dashboards, and automation. My background in Economics allows me to bridge the gap between technical data science and business strategy.</p>
+                </div>
+                <div class="skills-card">
+                    <h3>Technical Stack</h3>
+                    <ul class="skills">
+                        <li>Python</li><li>SQL</li><li>Power BI</li><li>Excel/VBA</li>
+                        <li>Pandas</li><li>Statistics</li><li>Git</li><li>Automation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <!-- SKILLS -->
-    <section class="section bg-light">
-        <h2>Skills</h2>
-        <ul class="skills">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Power BI</li>
-            <li>Excel</li>
-            <li>Pandas & NumPy</li>
-            <li>Data Visualization</li>
-            <li>Statistics</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
+        <!-- PROJECTS SECTION -->
+        <section class="section" id="projects">
+            <h2>Selected Work</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-type">Python • xlwings</div>
+                    <h3>Excel Automation Suite</h3>
+                    <p>Python-driven framework for automated Exploratory Data Analysis directly in Excel.</p>
+                    <a href="https://github.com/LuizStefanuto" target="_blank">View Code →</a>
+                </div>
+                <!-- Add more project cards here -->
+            </div>
+        </section>
+    </main>
 
-
-    <!-- CONTACT -->
-    <section class="section bg-light">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:luizstefanuto@outlook.com">luizstefanuto@outlook.com</a></p>
-        <p>GitHub: <a href="https://github.com/your-username" target="_blank">github.com/LuizStefanuto</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com" target="_blank">linkedin.com/in/LuizStefanuto</a></p>
-    </section>
-
-    <!-- FOOTER -->
     <footer class="footer">
-        <p>© 2025 Luiz Stefanuto</p>
+        <div class="container">
+            <p>© 2026 Luiz Stefanuto • Built with precision.</p>
+        </div>
     </footer>
 
 </body>
