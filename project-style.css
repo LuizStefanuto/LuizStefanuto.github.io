@@ -40,13 +40,18 @@ html { scroll-behavior: smooth; }
     color: var(--dark); 
 }
 
+.sidebar-header small {
+    font-size: 0.8rem;
+    color: var(--slate);
+    font-weight: 400;
+}
+
 .sidebar-toggle {
     background: none; 
     border: none; 
     font-size: 1.5rem; 
     cursor: pointer;
     color: var(--slate); 
-    padding: 0.25rem;
     position: absolute;
     top: 1rem;
     right: 1.5rem;
@@ -55,6 +60,7 @@ html { scroll-behavior: smooth; }
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1001;
 }
 
 .toc { padding: 1rem 1.5rem; }
@@ -165,10 +171,30 @@ html { scroll-behavior: smooth; }
 
 .numbered-list {
     list-style-position: inside;
+    padding-left: 1.5rem;
 }
 
 .numbered-list li {
     margin-bottom: 0.5rem;
+}
+
+.contact-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.contact-list li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.contact-list a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
 }
 
 /* MOBILE */
@@ -178,8 +204,8 @@ html { scroll-behavior: smooth; }
     }
     
     .sidebar { 
-        transform: translateX(-100%); 
         position: fixed;
+        transform: translateX(-100%);
         width: 280px;
     }
 }

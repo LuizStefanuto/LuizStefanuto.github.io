@@ -12,7 +12,9 @@
         <!-- SIDEBAR TOC -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h3>Excel EDA Framework</h3>
+                <h3>
+                    <a href="index.html" style="text-decoration: none; color: inherit;">Excel EDA Framework<br><small>Luiz Stefanuto</small></a>
+                </h3>
                 <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">×</button>
             </div>
             <nav class="toc">
@@ -27,6 +29,7 @@
                 </ul>
             </nav>
         </aside>
+        
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
@@ -110,19 +113,19 @@ my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
     </div>
 
     <script>
-    function toggleSidebar() {
-        document.getElementById('sidebar').classList.toggle('collapsed');
-    }
-    
-    // Close sidebar when clicking outside (desktop)
-    document.addEventListener('click', function(e) {
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.querySelector('.sidebar-toggle');
-        
-        if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
-            sidebar.classList.remove('collapsed');
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
         }
-    });
-    </script>
+        
+        // Close on outside click (desktop/mobile enhancement)
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.querySelector('.sidebar-toggle');
+            if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+                sidebar.classList.add('collapsed');
+            }
+        });
+        </script>
+        
 </body>
 </html>
