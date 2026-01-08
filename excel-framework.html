@@ -32,7 +32,7 @@
         <main class="main-content">
             <header class="project-header">
                 <h1>Excel EDA Framework</h1>
-                <p>Python + xlwings automation for Exploratory Data Analysis directly in Excel</p>
+                <p>Python + xlwings + VBA automation for Exploratory Data Analysis directly in Excel</p>
                 <a href="https://github.com/LuizStefanuto/excel-eda-framework" class="btn primary" target="_blank">View Code</a>
             </header>
 
@@ -54,11 +54,11 @@
                         </div>
                         <div class="feature">
                             <h3>VBA Integration</h3>
-                            <p>Dynamic charts created via `Draw_Analysis_Charts` macro.</p>
+                            <p>Dynamic charts created via macro.</p>
                         </div>
                         <div class="feature">
                             <h3>Excel Native</h3>
-                            <p>Results stay in Excel ListObjects, fully editable.</p>
+                            <p>Results stay in Excel tables, fully editable.</p>
                         </div>
                     </div>
                 </section>
@@ -110,9 +110,21 @@ my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
     </div>
 
     <script>
-        function toggleSidebar() {
-            document.querySelector('.sidebar').classList.toggle('collapsed');
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('collapsed');
+    }
+        
+        
+    document.addEventListener('click', function(e) {
+        const sidebar = document.querySelector('.sidebar');
+        const toggleBtn = document.querySelector('.sidebar-toggle');
+            
+        if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+            sidebar.classList.remove('collapsed');
         }
+    });
     </script>
+        
 </body>
 </html>

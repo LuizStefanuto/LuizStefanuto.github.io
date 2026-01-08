@@ -79,3 +79,13 @@
     .page-wrapper { grid-template-columns: 1fr; }
     .sidebar { transform: translateX(-100%); }
 }
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+@media (min-width: 769px) {
+    .sidebar.collapsed {
+        transform: none; /* Don't collapse on desktop */
+    }
+}
