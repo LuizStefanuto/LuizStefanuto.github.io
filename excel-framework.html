@@ -13,7 +13,7 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h3>Excel EDA Framework</h3>
-                <button class="sidebar-toggle" onclick="toggleSidebar()">×</button>
+                <button class="sidebar-toggle" aria-label="Toggle menu">×</button>
             </div>
             <nav class="toc">
                 <ul>
@@ -111,20 +111,19 @@ my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
 
     <script>
     function toggleSidebar() {
-        const sidebar = document.querySelector('.sidebar');
+        const sidebar = document.getElementById('sidebar');
         sidebar.classList.toggle('collapsed');
     }
-        
-        
+    
+    // Close sidebar when clicking outside (desktop)
     document.addEventListener('click', function(e) {
-        const sidebar = document.querySelector('.sidebar');
+        const sidebar = document.getElementById('sidebar');
         const toggleBtn = document.querySelector('.sidebar-toggle');
-            
+        
         if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
             sidebar.classList.remove('collapsed');
         }
     });
     </script>
-        
 </body>
 </html>
