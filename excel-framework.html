@@ -1,107 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excel EDA Framework | Luiz Stefanuto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="project-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Excel EDA Framework | Luiz Stefanuto</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="project-style.css" />
+
+  <!-- Prism (syntax highlighting) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
 </head>
+
 <body>
-    <div class="page-wrapper">
-        <!-- SIDEBAR TOC -->
-        <aside class="sidebar" id="sidebar">
-            <div class="sidebar-header">
-                <h3>
-                    <a href="index.html" style="text-decoration: none; color: inherit;">Luiz Stefanuto</a>
-                </h3>
+  <div class="page-wrapper">
+    <!-- SIDEBAR TOC -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3>
+          <a href="index.html" style="text-decoration: none; color: inherit;">Luiz Stefanuto</a>
+        </h3>
+      </div>
+
+      <nav class="toc">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#intro">Introduction</a></li>
+          <li>
+            <a href="#usage">Data Import and Preparation</a>
+            <ul class="toc-sub">
+              <li><a href="#var-classification">Variable Classification</a></li>
+            </ul>
+          </li>
+          <li><a href="#qualitative">Qualitative EDA</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <header class="project-header">
+        <h1>Excel EDA Framework</h1>
+        <p>Python + xlwings + VBA automation for Exploratory Data Analysis directly in Excel</p>
+      </header>
+
+      <article>
+        <section id="overview" class="section">
+          <h2>Overview</h2>
+          <p>
+            This framework automates univariate EDA for both qualitative and quantitative variables, generating formatted tables and
+            VBA-triggered charts directly in Excel.
+          </p>
+        </section>
+
+        <section id="features" class="section">
+          <h2>Key Features</h2>
+
+          <div class="features-grid">
+            <div class="feature">
+              <h3>Auto Table Generation</h3>
+              <p>Frequency distributions, percentages, and summary statistics.</p>
             </div>
 
-            <nav class="toc">
-                <ul>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#demo">Demo</a></li>
-                    <li><a href="#install">Installation</a></li>
-                    <li><a href="#usage">Usage</a></li>
-                    <li><a href="#architecture">Architecture</a></li>
-                    <li><a href="#github">GitHub</a></li>
-                </ul>
-            </nav>
-        </aside>
+            <div class="feature">
+              <h3>VBA Integration</h3>
+              <p>Dynamic charts created via macro.</p>
+            </div>
 
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
-            <header class="project-header">
-                <h1>Excel EDA Framework</h1>
-                <p>Python + xlwings + VBA automation for Exploratory Data Analysis directly in Excel</p>
-                <a href="https://github.com/LuizStefanuto/excel-eda-framework" class="btn primary" target="_blank">View Code</a>
-            </header>
+            <div class="feature">
+              <h3>Excel Native</h3>
+              <p>Results stay in Excel tables, fully editable.</p>
+            </div>
+          </div>
+        </section>
 
-            <article>
-                <section id="overview" class="section">
-                    <h2>Overview</h2>
-                    <p>This framework automates univariate EDA for both qualitative and quantitative variables, generating formatted tables and VBA-triggered charts directly in Excel.</p>
-                    <img src="demo-screenshot.png" alt="Framework Demo" class="demo-image">
-                </section>
+        <section id="intro" class="section">
+          <h2>Introduction</h2>
 
-                <section id="features" class="section">
-                    <h2>Key Features</h2>
-                    <div class="features-grid">
-                        <div class="feature">
-                            <h3>Auto Table Generation</h3>
-                            <p>Frequency distributions, percentages, and summary statistics.</p>
-                        </div>
-                        <div class="feature">
-                            <h3>VBA Integration</h3>
-                            <p>Dynamic charts created via macro.</p>
-                        </div>
-                        <div class="feature">
-                            <h3>Excel Native</h3>
-                            <p>Results stay in Excel tables, fully editable.</p>
-                        </div>
-                    </div>
-                </section>
+          <p>
+            Let's face it: Excel isn't the best tool for data analysis and manipulation, and it's an even worse place to edit formulas and code.
+            Still, because of its popularity and convenience, it will likely remain a core tool for analysts for years to come.
+          </p>
 
-                <section id="demo" class="section">
-                    <h2>Demo</h2>
-                    <video controls width="100%" style="max-width: 800px;">
-                        <source src="framework-demo.mp4" type="video/mp4">
-                    </video>
-                </section>
+          <p>
+            This project uses Python with xlwings and VBA to automate exploratory analysis in a more developer-friendly workflow:
+            write and iterate in VS Code, then generate tables and charts directly in Excel.
+          </p>
 
-                <section id="install" class="section">
-                    <h2>Installation</h2>
-                    <ol class="numbered-list">
-                        <li><code>git clone https://github.com/LuizStefanuto/excel-eda-framework</code></li>
-                        <li><code>pip install -r requirements.txt</code></li>
-                        <li>Open <code>analysis.xlsm</code></li>
-                        <li>Run <code>main_analysis.py</code></li>
-                    </ol>
-                </section>
+          <p>The result is faster, more consistent EDA and fewer manual steps.</p>
 
-                <section id="usage" class="section">
-                    <h2>Usage</h2>
-                    <div class="code-block">
-                        <pre><code>quali_tables = fx.create_count_tables(data_df, quali_vars)
-fx.write_table_grid_xlwings(quali_tables, "Análise_Exploratória_Quali")
-my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
-                    </div>
-                </section>
+          <p>
+            The workflow is table-based. After importing the dataset into Excel, the framework generates one or more analysis tables per variable
+            (frequency tables, summary stats, etc.). A VBA macro then reads those tables and creates the corresponding charts on dedicated sheets.
+          </p>
 
-                <section id="architecture" class="section">
-                    <h2>Architecture</h2>
-                    <img src="architecture-diagram.png" alt="Architecture Diagram">
-                </section>
+          <p>
+            In this example, the framework is demonstrated using data from an employee database. The variables include salary, tenure (time at the
+            company), commuting distance, and similar attributes.
+          </p>
+        </section>
 
-                <section id="github" class="section">
-                    <h2>GitHub Repository</h2>
-                    <a href="https://github.com/LuizStefanuto/excel-eda-framework" class="btn primary" target="_blank">
-                        Full Repository →
-                    </a>
-                </section>
-            </article>
-        </main>
-    </div>
+        <section id="usage" class="section">
+          <h2>Data Import and Preparation</h2>
+
+          <p>
+            The data is imported from an Excel table into a pandas DataFrame. In the example below, the table is named <code>data</code> and it lives
+            on the <code>Base</code> sheet.
+          </p>
+
+          <p>Before running the analysis, irrelevant columns (such as an ID field) are removed.</p>
+
+          <p>
+            The workbook must be saved as <code>.xlsm</code> (macro-enabled) because the chart generation step runs via VBA macros.
+          </p>
+
+          <!-- ChatGPT-like code block wrapper + Prism highlighting -->
+          <div class="code-card">
+            <div class="code-card__header">
+              <span class="code-card__lang">Python</span>
+            </div>
+
+            <pre class="code-card__body"><code class="language-python">import xlwings as xw
+import pandas as pd
+
+file = "---------------.xlsm"
+wb = xw.Book(file)
+ws = wb.sheets["Base"]
+tb = ws.tables
+data_df = ws.tables["data"].range.options(pd.DataFrame, header=1, index=False).value
+data_df = data_df.drop(columns=["ID"])</code></pre>
+          </div>
+        </section>
+
+        <section id="var-classification" class="section">
+          <h2>Variable Classification</h2>
+
+          <p>
+            Before generating the EDA outputs, variables are classified into qualitative and quantitative groups. Qualitative variables are also
+            tagged as binary and non-binary based on the number of distinct values.
+          </p>
+
+          <p>
+            Quantitative variables are divided into discrete and continuous. This project uses a practical definition of continuity based on the
+            behavior of the variable in frequency histograms (binning). A more detailed explanation is provided below.
+          </p>
+
+          <p>
+            Variables are further divided into <strong>ordered</strong> or <strong>unordered</strong>, depending on whether their categories can be
+            meaningfully ranked. For example, <code>gender</code> is treated as unordered, while <code>time_at_the_company</code> can be treated as
+            ordered. It is worth noting that ordering follows from a hierarchy notion and is therefore context-dependent.
+          </p>
+
+          <img src="Var_Classification.png" alt="Variable classification screenshot" class="demo-image" />
+        
+          <p>Then import the Var_Classification table into Python and sort it (if it isn’t already sorted in Excel).</p>
+          
+          <div class="code-card">
+            <div class="code-card__header">
+              <span class="code-card__lang">Python</span>
+            </div>
+
+            <pre class="code-card__body"><code class="language-python">Var_Classification_table = (
+    wb.sheets["Var_Classification"]
+        .tables["Var_Classification"]
+        .range.options(pd.DataFrame, header=1, index=False)
+        .value
+)
+            
+Var_Classification_table = Var_Classification_table.sort_values(
+    by=["Quali x Quanti", "Binary x Non Binary xx Continuous x Discrete", "Ranking"],
+    ascending=[True, True, False],
+)
+            
+Var_Classification_table.reset_index(drop=True, inplace=True)</code></pre>
+            </div>
+        </section>
+        <section id="qualitative" class="section">
+            <h2>Qualitative Univariate EDA</h2>
+          
+            <p>For qualitative variables, the workflow is:</p>
+          
+            <ol>
+              <li>Filter qualitative variables from <code>Var_Classification_table</code>.</li>
+              <li>Create count tables (frequency) for each variable.</li>
+              <li>If a variable is ordered, reorder the table rows according to the desired ranking.</li>
+              <li>Add percentages and cumulative percentages.</li>
+              <li>Write the tables back to Excel.</li>
+            </ol>
+
+            <p>Start by filtering and creating the tables:</p>
+
+            <div class="code-card">
+                <div class="code-card__header">
+                  <span class="code-card__lang">Python</span>
+                </div>
+    
+                <pre class="code-card__body"><code class="language-python">
+quali_vars = (
+    Var_Classification_table.loc[Var_Classification_table['Quali x Quanti'] == 'Qualitative',
+     'Variable'].to_list()
+)
+def create_count_tables_no_index(df, var_list):
+    """
+    Creates a dictionary of tables where:
+    - Index = The category values of the variable
+    - Column = 'Contagem'
+    """
+    tables = {}
+    
+    valid_vars = df.columns.intersection(var_list)
+    
+    for col in valid_vars:
+        count_df = df[col].value_counts().to_frame(name='Contagem')
+        count_df.index.name = col
+        tables[col] = count_df
+
+    sorted_dict = {name: tables[name] for name in var_list if name in tables}
+        
+    return sorted_dict
+
+quali_df_tables = create_count_tables_no_index(data_df, quali_vars)</code></pre>
+                </div>
+
+            <p>Now let's do the reordering for the Non Binary, Ordered variables:</p>
+
+            <div class="code-card">
+                <div class="code-card__header">
+                  <span class="code-card__lang">Python</span>
+                </div>
+    
+                <pre class="code-card__body"><code class="language-python">
+quali_df_tables["Frequência de Viagens"] = quali_df_tables["Frequência de Viagens"].reindex(\
+["Não viaja", "Viaja raramente", "Viaja frequentemente"])
+
+quali_df_tables["Formação"] = quali_df_tables["Formação"].reindex(\
+["Ensino Médio", "Ensino Técnico", "Ensino Superior", "Mestrado", "Doutorado"])
+                    
+quali_df_tables["E-Sat"] = quali_df_tables["E-Sat"].reindex(\
+["Muito Alto", "Alto", "Médio", "Baixo"])
+                    
+quali_df_tables["Estado_Civil"] = quali_df_tables["Estado_Civil"].reindex(\
+["Solteiro", "Casado", "Divorciado"])
+                    
+quali_df_tables["Equilibrio_de_Vida"] = quali_df_tables["Equilibrio_de_Vida"].reindex(\
+["Ruim", "Bom", "Muito bom", "Excelente"])  </code></pre>
+                </div>
+            <p>Add percentages:</p>
+            
+            <div class="code-card">
+                <div class="code-card__header">
+                  <span class="code-card__lang">Python</span>
+                </div>
+    
+                <pre class="code-card__body"><code class="language-python">
+def add_percentages(tables_dict):
+    """
+    Adds 'Porcentagem' and 'Porcentagem_Acumulada' columns to each table.
+    """
+    for title, df in tables_dict.items():
+        if "Contagem" not in df.columns:
+            continue
+                            
+        total = df["Contagem"].sum()
+                        
+        # Porcentagem (% of total) 
+        df["Porcentagem"] = df["Contagem"] / total
+                        
+        # Porcentagem acumulada (Cumulative Percentage) 
+        df["Porcentagem_Acumulada"] = df["Porcentagem"].cumsum()
+                    
+    return tables_dict
+
+add_percentages(quali_df_tables)</code></pre>
+                </div>
+
+            <p> Finally, write the tables to excel. By default </p>
+
+          </section>
+          
+      </article>
+    </main>
+  </div>
 </body>
 </html>
+
+
