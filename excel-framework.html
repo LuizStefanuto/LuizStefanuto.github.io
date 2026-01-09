@@ -13,10 +13,10 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <h3>
-                    <a href="index.html" style="text-decoration: none; color: inherit;">Excel EDA Framework<br><small>Luiz Stefanuto</small></a>
+                    <a href="index.html" style="text-decoration: none; color: inherit;">Luiz Stefanuto</a>
                 </h3>
-                <button class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">×</button>
             </div>
+
             <nav class="toc">
                 <ul>
                     <li><a href="#overview">Overview</a></li>
@@ -29,7 +29,6 @@
                 </ul>
             </nav>
         </aside>
-        
 
         <!-- MAIN CONTENT -->
         <main class="main-content">
@@ -40,14 +39,12 @@
             </header>
 
             <article>
-                <!-- OVERVIEW -->
                 <section id="overview" class="section">
                     <h2>Overview</h2>
                     <p>This framework automates univariate EDA for both qualitative and quantitative variables, generating formatted tables and VBA-triggered charts directly in Excel.</p>
                     <img src="demo-screenshot.png" alt="Framework Demo" class="demo-image">
                 </section>
 
-                <!-- FEATURES -->
                 <section id="features" class="section">
                     <h2>Key Features</h2>
                     <div class="features-grid">
@@ -66,7 +63,6 @@
                     </div>
                 </section>
 
-                <!-- DEMO -->
                 <section id="demo" class="section">
                     <h2>Demo</h2>
                     <video controls width="100%" style="max-width: 800px;">
@@ -74,7 +70,6 @@
                     </video>
                 </section>
 
-                <!-- INSTALLATION -->
                 <section id="install" class="section">
                     <h2>Installation</h2>
                     <ol class="numbered-list">
@@ -85,7 +80,6 @@
                     </ol>
                 </section>
 
-                <!-- USAGE -->
                 <section id="usage" class="section">
                     <h2>Usage</h2>
                     <div class="code-block">
@@ -95,13 +89,11 @@ my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
                     </div>
                 </section>
 
-                <!-- ARCHITECTURE -->
                 <section id="architecture" class="section">
                     <h2>Architecture</h2>
                     <img src="architecture-diagram.png" alt="Architecture Diagram">
                 </section>
 
-                <!-- GITHUB -->
                 <section id="github" class="section">
                     <h2>GitHub Repository</h2>
                     <a href="https://github.com/LuizStefanuto/excel-eda-framework" class="btn primary" target="_blank">
@@ -111,21 +103,5 @@ my_macro('Análise_Exploratória_Quali', my_criteria)</code></pre>
             </article>
         </main>
     </div>
-
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('collapsed');
-        }
-        
-        // Close on outside click (desktop/mobile enhancement)
-        document.addEventListener('click', function(e) {
-            const sidebar = document.getElementById('sidebar');
-            const toggleBtn = document.querySelector('.sidebar-toggle');
-            if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
-                sidebar.classList.add('collapsed');
-            }
-        });
-        </script>
-        
 </body>
 </html>
