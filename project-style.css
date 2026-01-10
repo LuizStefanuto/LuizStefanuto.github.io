@@ -255,4 +255,9 @@
     color: var(--slate);
     font-weight: 600;
   }
-  
+  .project-title h3 {
+    margin: 0.5rem 0;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
