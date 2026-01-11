@@ -16,34 +16,35 @@
 </head>
 
 <body>
-  <div class="page-wrapper">
-    <!-- SIDEBAR TOC -->
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <h3>
-          <a href="index.html" style="text-decoration: none; color: inherit;">Luiz Stefanuto</a>
-        </h3>
-      </div>
-         
-      <nav class="toc">
-        <ul>
-          <li class="project-title"><h3>Excel EDA Framework</h3></li>
-          <li><a href="#overview">Overview</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#intro">Introduction</a></li>
-          <li>
-            <a href="#usage">Data Import and Preparation</a>
-            <ul class="toc-sub">
-              <li><a href="#var-classification">Variable Classification</a></li>
-            </ul>
-          </li>
-          <li><a href="#qualitative">Qualitative EDA</a></li>
-          <li><a href="#quantitative">Quantitative EDA</a></li>
-          <li><a href="#vba">VBA Charts</a></li> 
-        </ul>
-      </nav>
-    </aside>
-
+    <button class="sidebar-toggle" onclick="toggleSidebar()" aria-expanded="true">☰</button>
+    <div class="page-wrapper sidebar-expanded">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <h3><a href="index.html" style="text-decoration: none; color: inherit;">Luiz Stefanuto</a></h3>
+        </div>
+        
+        <nav class="toc">
+          <ul>
+            <li class="project-title">
+              <a href="#" style="text-decoration: none; color: inherit;">
+                  <h3>Excel EDA Framework</h3>
+              </a>
+            </li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#intro">Introduction</a></li>
+            <li>
+              <a href="#usage">Data Import and Preparation</a>
+              <ul class="toc-sub">
+                <li><a href="#var-classification">Variable Classification</a></li>
+              </ul>
+            </li>
+            <li><a href="#qualitative">Qualitative EDA</a></li>
+            <li><a href="#quantitative">Quantitative EDA</a></li>
+            <li><a href="#vba">VBA Charts</a></li> 
+          </ul>
+        </nav>
+      </aside>
     <!-- MAIN CONTENT -->
     <main class="main-content">
       <header class="project-header">
@@ -755,11 +756,26 @@ my_macro(sheet, my_criteria_quanti)</code></pre>
             </section>
 
 
-
-
       </article>
     </main>
   </div>
+
+  <script>
+    function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const wrapper = document.querySelector('.page-wrapper');
+  const toggleBtn = document.querySelector('.sidebar-toggle');
+
+  const isCollapsed = sidebar.classList.toggle('collapsed');
+  wrapper.classList.toggle('sidebar-expanded', !isCollapsed);
+
+  // IMPORTANT: moved class when collapsed
+  toggleBtn.classList.toggle('sidebar-moved', isCollapsed);
+
+  toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+}
+    </script>
+
  </body>
 </html>
 
