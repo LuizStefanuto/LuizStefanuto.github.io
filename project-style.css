@@ -331,4 +331,35 @@
       padding: 2rem 2rem;
     }
   }
+  /* Mobile Portrait (vertical) */
+@media (max-width: 480px) {
+    .page-wrapper {
+      display: block !important; /* Stack sidebar + content */
+    }
+    
+    .sidebar {
+      width: 100% !important;
+      position: static !important;
+      margin-bottom: 2rem;
+    }
+    
+    .main-content {
+      width: 100% !important;
+      padding: 1rem;
+    }
+    
+    .code-card {
+      font-size: 0.85rem; /* Smaller font */
+      max-width: 100%;
+      overflow-x: auto; /* Horizontal scroll for long lines */
+    }
+    
+    .toc ul {
+      padding-left: 0.5rem; /* Less indent */
+    }
+    
+    h1, h2, h3 {
+      font-size: 1.2em, 1.1em, 1em; /* Smaller headings */
+    }
+  }
   
