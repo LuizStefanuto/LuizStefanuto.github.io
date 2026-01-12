@@ -26,28 +26,39 @@
         <nav class="toc">
           <ul>
             <li class="project-title">
-              <a href="#" style="text-decoration: none; color: inherit;">
+              <a href="#top" style="text-decoration: none; color: inherit;">
                   <h3>Excel EDA Framework</h3>
               </a>
             </li>
+            
             <li><a href="#overview">Overview</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#intro">Introduction</a></li>
+            
             <li>
               <a href="#usage">Data Import and Preparation</a>
               <ul class="toc-sub">
                 <li><a href="#var-classification">Variable Classification</a></li>
               </ul>
             </li>
+            
             <li><a href="#qualitative">Qualitative EDA</a></li>
             <li><a href="#quantitative">Quantitative EDA</a></li>
-            <li><a href="#vba">VBA Charts</a></li> 
+            
+            <li>
+              <a href="#vba">VBA Charts</a> 
+              <ul class="toc-sub">
+                <li><a href="#var-filter">Variable Selection</a></li>
+              </ul>
+            </li>
+            
+            <li><a href="#final">Final Thoughts</a></li>
           </ul>
         </nav>
       </aside>
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      <header class="project-header">
+      <header class="project-header" id="top">
         <h1>Excel EDA Framework</h1>
         <p>Python + xlwings + VBA automation for Exploratory Data Analysis in Excel</p>
       </header>
@@ -717,7 +728,7 @@ bas_file_path = os.path.abspath("vba_code.bas")
 wb.api.VBProject.VBComponents.Import(bas_file_path)</code></pre>
 </div>
 
-            <p>Now simply filter the desired variables as a list and call the subroutine</p>
+            <p>Now simply filter the desired variables as a list and call the subroutine.</p>
             <p>To show all the qualitative variables charts, for instance, do:</p>
             <div class="code-card">
                 <div class="code-card__header">
@@ -751,9 +762,87 @@ my_macro(sheet, my_criteria_quanti)</code></pre>
 </div>
             <img src="all_quanti_charts.png" alt="all_quanti screenshot" class="demo-image" />
 
-
-
             </section>
+            <section id="var-filter" class="section">
+                <h2>Variable Selection</h2>
+                <p>It is possible to create charts based on a classification criteria, such as Binary and Unordered, using a mask: </p>
+                <div class="code-card">
+                    <div class="code-card__header">
+                      <span class="code-card__lang">Python</span>
+                    </div>
+            
+            <pre class="code-card__body"><code class="language-python">
+mask = (
+    (Var_Classification_table['Quali x Quanti'] == 'Qualitative') &
+    (Var_Classification_table['Binary x Non Binary xx Continuous x Discrete'] == 'Binary') &
+    (Var_Classification_table['Ranking'] == 'Unordered')
+)
+
+my_criteria_quali = Var_Classification_table.loc[mask, 'Variable'].tolist()
+
+my_macro = wb.macro('Draw_Analysis_Charts')
+my_macro('Quali_EDA', my_criteria_quali)</code></pre>
+</div>
+            <img src="filtered_quali.png" alt="filtered_quali screenshot" class="demo-image" />
+
+                <p>Or even choose an arbitrary list of variables:</p>
+
+                <div class="code-card">
+                    <div class="code-card__header">
+                      <span class="code-card__lang">Python</span>
+                    </div>
+            
+            <pre class="code-card__body"><code class="language-python">
+my_criteria_quali = ['E-Sat', 'Formação', 'Gênero', 'Equilibrio_de_Vida']
+
+my_macro = wb.macro('Draw_Analysis_Charts')
+my_macro('Quali_EDA', my_criteria_quali)</code></pre>
+</div>
+            <img src="filtered_quali_arb.png" alt="filtered_quali screenshot" class="demo-image" />
+            <img src="filtered_quali_arb_2.png" alt="filtered_quali screenshot" class="demo-image" />
+
+
+            <p>Similarly for quantitative variables:</p>
+
+<div class="code-card">
+                    <div class="code-card__header">
+                      <span class="code-card__lang">Python</span>
+                    </div>
+            
+            <pre class="code-card__body"><code class="language-python">
+
+mask = (
+    (Var_Classification_table['Quali x Quanti'] == 'Quantitative') &
+    (Var_Classification_table['Binary x Non Binary xx Continuous x Discrete'] == 'Continuous') &
+    (Var_Classification_table['Ranking'] == 'Ordered')
+)
+
+my_criteria_quanti = Var_Classification_table.loc[mask, 'Variable'].tolist()
+
+my_macro = wb.macro('Draw_Analysis_Charts')
+my_macro('Quanti_EDA', my_criteria_quanti)</code></pre>
+</div>
+            <img src="filtered_quanti.png" alt="filtered_quanti screenshot" class="demo-image" />
+            <img src="filtered_quanti_2.png" alt="filtered_quanti screenshot" class="demo-image" />
+            <img src="filtered_quanti_3.png" alt="filtered_quanti screenshot" class="demo-image" />
+
+</section>
+
+        <section id="final" class="section">
+            <h2>Final Thoughts</h2>
+            <p>Thank you for reading this brief walkthrough of the dataset's variables. With the univariate 
+                outputs in place (tables, percentages, and charts), the analyst can move faster and more 
+                consistently into deeper analysis—whether that means extracting variable-level insights or 
+                extending the work into bivariate exploration. 
+            </p>
+            <p>
+                More broadly, analysis is the process of turning overwhelming information into structured 
+                understanding—separating noise from signal and focusing on what is relevant. By using an 
+                approach in which every variable can be inspected consistently, the analyst can build a 
+                clearer picture of the subject while staying confident that important details are unlikely 
+                to be overlooked.
+            </p>
+        </section>
 
 
       </article>
